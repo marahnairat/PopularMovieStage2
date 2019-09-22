@@ -16,12 +16,12 @@
     <dist:module dist:instant="true" />
 
     <application
+        android:name="com.example.popularmoviestage2.MyApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.popularmoviestage2.MainActivity" >
@@ -38,7 +38,7 @@
 
         <provider
             android:name="com.example.popularmoviestage2.FavoritesProvider"
-            android:authorities="com.shrreyabhatachaarya.provider.popularmovies2" >
+            android:authorities="com.example.popularmoviestage2" >
         </provider>
         <provider
             android:name="com.squareup.picasso.PicassoProvider"

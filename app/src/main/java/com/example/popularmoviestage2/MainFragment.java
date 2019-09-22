@@ -50,8 +50,7 @@ public class MainFragment extends Fragment implements ConnectivityReceiver.Conne
     String sort_type;
     Boolean twoPane;
 
-    //add your api key here
-    String api_key = "";
+    String api_key = "0a4f7921a568353b527e40bbf3776de9";
 
     String LOG_TAG = "MainFragment";
 
@@ -167,12 +166,19 @@ public class MainFragment extends Fragment implements ConnectivityReceiver.Conne
                 Cursor c = getContext().getContentResolver().query(favorites, null, null, null, "_id");
                 fav_ids = new ArrayList<String>();
                 fav_posters = new ArrayList<byte[]>();
+                try {
+
                 if(c.moveToFirst()) {
                     do{
                         fav_ids.add(c.getString(c.getColumnIndex(FavoritesProvider._ID)));
                         fav_posters.add(c.getBlob(c.getColumnIndex(FavoritesProvider.POSTER)));
                     } while(c.moveToNext());
                 }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
             }
 
             else {
