@@ -1,8 +1,10 @@
 package com.example.popularmoviestage2;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,9 +43,9 @@ public class DetailActivity extends AppCompatActivity implements DetailFragment.
 
     }
 
+    @SuppressLint("MissingSuperCall")
     @Override
     protected void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
         restored = Boolean.TRUE;
     }
 }
