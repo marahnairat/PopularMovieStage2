@@ -183,7 +183,7 @@ public class DetailFragment extends Fragment implements View.OnClickListener{
         protected Void doInBackground(Void... params) {
 
             if(sort_type.equals("favorites")) {
-                Uri favorites = Uri.parse("content://com.example.provider.popularmovies2/favorites");
+                Uri favorites = Uri.parse("content://com.example.popularmoviestage2/favorites");
                 Cursor c = getActivity().getContentResolver().query(favorites, null, null, null, "_id");
                 if (c.moveToFirst()) {
                     do {
@@ -403,7 +403,8 @@ public class DetailFragment extends Fragment implements View.OnClickListener{
                         b.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                String youtube_id = youtube_ids[view.getId()];
+                                int inc=1001;
+                                String youtube_id = youtube_ids[view.getId()- inc];
                                 try {
                                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + youtube_id));
                                     startActivity(intent);

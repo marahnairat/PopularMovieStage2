@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 public class FavoritesProvider extends ContentProvider {
 
-    static final String PROVIDER_NAME = "com.example.provider.popularmovies2";
+    static final String PROVIDER_NAME = "com.example.popularmoviestage2";
     static final String URL = "content://" + PROVIDER_NAME + "/favorites";
     static final Uri CONTENT_URI = Uri.parse(URL);
 
@@ -75,7 +75,9 @@ public class FavoritesProvider extends ContentProvider {
 
     @Override
     public Uri insert(Uri uri, ContentValues values) {
-        long rowID = db.insert(FAVORITES_TABLE_NAME, "", values);
+        long rowID = db.insert
+                (FAVORITES_TABLE_NAME,
+                        "", values);
 
         if(rowID > 0) {
             Uri _uri = ContentUris.withAppendedId(CONTENT_URI, rowID);
